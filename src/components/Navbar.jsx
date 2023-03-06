@@ -19,7 +19,7 @@ const NavBar = () => {
             <NavLink
               to={link.path}
               style={({ isActive }) => ({
-                'text-decoration': isActive ? 'underline' : undefinedERROR,
+                'text-decoration': isActive ? 'underline' : undefined,
               })}
             >
               {link.text}
