@@ -1,3 +1,9 @@
-body {
-  background: white;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  text-decoration: underline;
+  color: blue;
 }
