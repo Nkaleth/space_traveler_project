@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Icon from '../Icons/planet.png';
 import '../styles/Navbar.css';
 
 const NavBar = () => {
-  const [active, setActive] = useState('');
-
   const links = [
     { path: '/', text: 'Rockets' },
     { path: 'missions', text: 'Missions' },
@@ -21,8 +18,10 @@ const NavBar = () => {
           <li key={link.text}>
             <NavLink
               to={link.path}
-              className={`${active === link.text ? 'active' : ''}`}
-              onClick={() => setActive(link.text)}>
+              style={({ isActive }) => ({
+                'text-decoration': isActive ? 'underline' : undefinedERROR,
+              })}
+            >
               {link.text}
             </NavLink>
           </li>
