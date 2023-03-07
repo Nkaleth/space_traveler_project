@@ -23,11 +23,18 @@ const missionsSlice = createSlice({
         ...state,
         status: 'loading',
       }))
-      .addCase(fetchMissions.fulfilled, (state, action) => ({
-        ...state,
-        status: 'succeeded',
-        missions: action.payload,
-      }))
+      .addCase(fetchMissions.fulfilled, (state, action) => {
+        const missions = action.payload.data.map((mission) => ({
+          mission_id: mission.mission_id,
+          mission_name: mission.mission_name,
+          description: mission.description,
+        }));
+        return {
+          ...state,
+          status: 'succeeded',
+          missions,
+        };
+      })
       .addCase(fetchMissions.rejected, (state, action) => ({
         ...state,
         status: 'failed',
