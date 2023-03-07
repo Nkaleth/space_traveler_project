@@ -23,7 +23,22 @@ const MissionsPage = () => {
 
   return (
     <div>
-      <h1>Missions Page</h1>
+      <table>
+        <thead>
+          <tr>Mission</tr>
+          <tr>Descriptio</tr>
+          <tr>Status</tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+              <tr />
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
