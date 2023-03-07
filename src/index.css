@@ -3,7 +3,14 @@
   padding: 0;
 }
 
-.active {
-  text-decoration: underline;
-  color: blue;
+.missions-section {
+  padding: 2rem;
+}
+
+.missions-section table {
+  width: 100%;
+}
+
+.missions-section thead {
+  width: 100%;
 }

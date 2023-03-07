@@ -22,12 +22,14 @@ const MissionsPage = () => {
   }, [missions, dispatch]);
 
   return (
-    <div>
+    <div className="missions-section">
       <table>
         <thead>
-          <tr>Mission</tr>
-          <tr>Descriptio</tr>
-          <tr>Status</tr>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
         </thead>
         <tbody>
           {missions.map((mission) => (

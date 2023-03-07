@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Icon from '../Icons/planet.png';
-import '../styles/Navbar.css';
+import '../styles/navbar.css';
 
 const NavBar = () => {
   const links = [
@@ -10,16 +10,18 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="Navbar">
-      <img src={Icon} alt="Logo" />
-      <h1>Space Travelers&apos; Hub</h1>
+    <nav className="navbar">
+      <div className="title-container">
+        <img src={Icon} alt="Logo" />
+        <h1>Space Travelers&apos; Hub</h1>
+      </div>
       <ul>
         {links.map((link) => (
           <li key={link.text}>
             <NavLink
               to={link.path}
               style={({ isActive }) => ({
-                'text-decoration': isActive ? 'underline' : undefined,
+                textDecoration: isActive ? 'underline' : undefined,
               })}
             >
               {link.text}
