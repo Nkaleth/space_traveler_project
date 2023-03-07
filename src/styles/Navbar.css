@@ -1,13 +1,28 @@
-.Navbar {
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+
+.title-container {
   display: flex;
 }
 
-.Navbar ul {
+.navbar img {
+  width: 4rem;
+}
+
+.navbar h1 {
+  margin: 1rem;
+}
+
+.navbar ul {
   list-style: none;
   display: flex;
 }
 
-.Navbar ul li a {
+.navbar ul li a {
   text-decoration: none;
   color: black;
   padding: 0 0.5rem;
