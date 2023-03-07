@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import MissionsPage from './components/Missions';
 import MyProfilePage from './components/MyProfile';
 import NavBar from './components/Navbar';
-import RocketPage from './components/Rocket';
+import RocketPage from './components/RocketPage';
 
 function App() {
   return (
