@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRocketItems } from '../redux/rockets/rocketsSlice';
+import RocketItem from './RocketItem';
 
 const RocketPage = () => {
   const { isLoading, rocketItems } = useSelector((store) => store.rockets);
@@ -17,7 +18,17 @@ const RocketPage = () => {
     );
   }
   return (
-    console.log(rocketItems)
+    <div className="rocketsAllItems">
+      { rocketItems.map((item) => (
+        <RocketItem
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          description={item.description}
+          Image={item.flickr_images}
+        />
+      ))}
+    </div>
   );
 };
 
