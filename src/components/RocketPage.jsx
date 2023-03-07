@@ -24,7 +24,7 @@ const RocketPage = () => {
           key={item.id}
           id={item.id}
           name={item.name}
-          type={item.type}
+          description={item.description}
           Image={item.flickr_images}
         />
       ))}
