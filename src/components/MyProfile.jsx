@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 const MyProfilePage = () => {
   const missions = useSelector((state) => state.missions.missions);
   const joinedMissions = missions.filter((mission) => mission.reserved);
+  const { rocketItems } = useSelector((store) => store.rockets);
+  const reserveRockets = rocketItems.filter((rocket) => rocket.reserved === true);
 
   return (
     <div className="profile-section">
@@ -21,8 +23,16 @@ const MyProfilePage = () => {
           )}
         </ul>
       </section>
+      <section className="myRockets">
+        <h2>My Rockets</h2>
+        {reserveRockets.map((rockets) => (
+          <li key={rockets.id}>
+            {rockets.name}
+          </li>
+        ))}
+      </section>
     </div>
-  );
-};
+  )
+}
 
 export default MyProfilePage;
