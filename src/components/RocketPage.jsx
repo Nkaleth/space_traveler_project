@@ -26,6 +26,7 @@ const RocketPage = () => {
           name={item.name}
           description={item.description}
           Image={item.flickr_images}
+          reserved={item.reserved}
         />
       ))}
     </div>
