@@ -6,6 +6,8 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Missions section */
+
 .missions-section {
   padding: 2rem;
 }
@@ -16,6 +18,8 @@
   background-color: #cfcfcf;
   border: none;
 }
+
+/* Missions table */
 
 .missions-section table {
   width: 100%;
@@ -70,4 +74,23 @@ tr:nth-child(odd) {
   border-radius: .2rem;
   padding: .4rem .6rem;
   margin: .8rem;
+}
+
+/*My Profile*/
+
+.profile-section {
+  padding: 2rem;
+}
+
+.profile-missions h1 {
+  margin-bottom: 1rem;
+}
+
+.profile-missions ul {
+  list-style: none;
+}
+
+.profile-missions ul li {
+  border: solid 1px #e5e8eb;
+  padding: 1rem 1rem 2rem 1rem;
 }
