@@ -7,8 +7,8 @@ const RocketPage = () => {
   const { isLoading, rocketItems } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRocketItems());
-  }, [dispatch]);
+    if (rocketItems.length === 0) { dispatch(getRocketItems()); }
+  });
 
   if (isLoading) {
     return (

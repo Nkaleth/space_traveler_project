@@ -25,6 +25,9 @@ const rocketsSlice = createSlice({
     reserveRocket: (state, action) => {
       const newRocketItems = state.rocketItems.map((item) => {
         if (item.id !== action.payload) { return item; }
+        if (item.reserved === true) {
+          return { ...item, reserved: false };
+        }
         return { ...item, reserved: true };
       });
       state.rocketItems = newRocketItems;
