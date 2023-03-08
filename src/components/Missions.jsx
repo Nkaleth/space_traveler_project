@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, leaveMission, reserveMission } from '../redux/missionsSlice';
+import { fetchMissions, leaveMission, reserveMission } from '../redux/missions/missionsSlice';
 
 const MissionsPage = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions.missions);
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, []);
 
   const handleJoinMission = (missionId) => {
     dispatch(reserveMission(missionId));

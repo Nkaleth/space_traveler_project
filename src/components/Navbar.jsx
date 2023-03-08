@@ -5,8 +5,8 @@ import '../styles/navbar.css';
 const NavBar = () => {
   const links = [
     { path: '/', text: 'Rockets' },
-    { path: 'missions', text: 'Missions' },
-    { path: 'profile', text: 'My Profile' },
+    { path: '/missions', text: 'Missions' },
+    { path: '/profile', text: 'My Profile' },
   ];
 
   return (
