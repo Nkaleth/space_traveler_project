@@ -30,8 +30,8 @@ const MissionsPage = () => {
             <tr key={mission.mission_id}>
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>
-              <td><p>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</p></td>
-              <td><button type="button" onClick={() => handleJoinMission(mission.mission_id)}>Join Mission</button></td>
+              <td>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
+              <td><button type="button" onClick={() => handleJoinMission(mission.mission_id)}>{mission.reserved ? 'Leave Mission' : 'Join Mission'}</button></td>
             </tr>
           ))}
         </tbody>
