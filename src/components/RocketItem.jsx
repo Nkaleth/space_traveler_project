@@ -16,7 +16,7 @@ const RocketItem = ({
         <p>
           {description}
         </p>
-        <button type="button" onClick={() => (dispatch(reserveRocket(id)))}>Reserve Rocket</button>
+        <button type="button" value="Reserve Rocket" onClick={() => (dispatch(reserveRocket(id)))}>Reserve Rocket</button>
       </section>
     </div>
   );
