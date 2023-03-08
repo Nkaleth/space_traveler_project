@@ -20,21 +20,26 @@ const MissionsPage = () => {
 
   return (
     <div className="missions-section">
+      <hr className="missions-divider" />
       <table>
         <thead>
           <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>&nbsp;</th>
+            <th className="table-head">Mission</th>
+            <th className="table-head">Description</th>
+            <th className="table-head">Status</th>
+            <th className="table-head">&nbsp;</th>
           </tr>
         </thead>
         <tbody>
           {missions.map((mission) => (
             <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
-              <td>{mission.description}</td>
-              <td>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</td>
+              <td className="mission-name">{mission.mission_name}</td>
+              <td><p className="mission-description">{mission.description}</p></td>
+              <td>
+                {mission.reserved
+                  ? <p className="status-badge status-badge-active">Active Member</p>
+                  : <p className="status-badge status-badge-inactive">NOT A MEMBER</p>}
+              </td>
               <td>
                 {mission.reserved
                   ? (

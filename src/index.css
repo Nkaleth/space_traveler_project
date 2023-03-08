@@ -1,16 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .missions-section {
   padding: 2rem;
 }
 
-.missions-section table {
-  width: 100%;
+.missions-divider {
+  margin-bottom: 1.2rem;
+  height: 1px;
+  background-color: #cfcfcf;
+  border: none;
 }
 
-.missions-section thead {
+.missions-section table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+.table-head {
+  background-color: white;
+}
+
+.missions-section th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #e5e8eb;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.mission-name {
+  font-weight: 700;
+}
+
+.mission-description {
+  font-size: .8rem;
+  padding-bottom: 1rem;
+}
+
+.status-badge {
+  border-radius: .4rem;
+  color: white;
+  font-weight: 400;
+  font-size: .8rem;
+  min-width: 105px;
+  text-align: center;
+}
+
+.status-badge-inactive {
+  background-color: #6d757d;
+}
+
+.status-badge-active {
+  background-color: #18a2b8;
+}
+
+.missions-section button {
+  background-color: transparent;
+  white-space: nowrap;
+  border: solid 1px black;
+  border-radius: .2rem;
+  padding: .4rem .6rem;
+  margin: .8rem;
 }
