@@ -32,7 +32,7 @@ const MyProfilePage = () => {
         ))}
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default MyProfilePage;

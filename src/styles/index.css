@@ -46,15 +46,15 @@ tr:nth-child(odd) {
 }
 
 .mission-description {
-  font-size: .8rem;
+  font-size: 0.8rem;
   padding-bottom: 1rem;
 }
 
 .status-badge {
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   color: white;
   font-weight: 400;
-  font-size: .8rem;
+  font-size: 0.8rem;
   min-width: 105px;
   text-align: center;
 }
@@ -71,12 +71,12 @@ tr:nth-child(odd) {
   background-color: transparent;
   white-space: nowrap;
   border: solid 1px black;
-  border-radius: .2rem;
-  padding: .4rem .6rem;
-  margin: .8rem;
+  border-radius: 0.2rem;
+  padding: 0.4rem 0.6rem;
+  margin: 0.8rem;
 }
 
-/*My Profile*/
+/* My Profile */
 
 .profile-section {
   padding: 2rem;

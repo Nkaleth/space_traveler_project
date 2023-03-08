@@ -10,7 +10,7 @@ const MissionsPage = () => {
     if (missions.length === 0) {
       dispatch(fetchMissions());
     }
-  }, []);
+  });
 
   const handleJoinMission = (missionId) => {
     dispatch(reserveMission(missionId));
