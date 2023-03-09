@@ -11,7 +11,9 @@ const RocketItem = ({
   if (!reserved) {
     return (
       <div className="rocketItemCont">
-        <img src={Image[0]} alt="" />
+        <section className="rocketImgCont">
+          <img src={Image[0]} alt="" />
+        </section>
         <section id={id} className="rocket_details">
           <h2>{name }</h2>
           <p>
@@ -24,7 +26,9 @@ const RocketItem = ({
   }
   return (
     <div className="rocketItemCont">
-      <img src={Image[0]} alt="" />
+      <section className="rocketImgCont">
+        <img src={Image[0]} alt="" />
+      </section>
       <section id={id} className="rocket_details">
         <h2>{name }</h2>
         <p>

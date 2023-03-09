@@ -19,6 +19,7 @@ const RocketPage = () => {
   }
   return (
     <div className="rocketsAllItems">
+      <hr className="missions-divider" />
       { rocketItems.map((item) => (
         <RocketItem
           key={item.id}
