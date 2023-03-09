@@ -5,18 +5,18 @@
 .rocketItemCont {
   display: flex;
   width: 100%;
-  height: 200px;
+  height: auto;
   margin: 1em;
 }
 
 .rocketImgCont {
-  width: 20%;
+  width: 30%;
 }
 
 .rocketImgCont img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .rocket_details {
@@ -50,6 +50,7 @@
   font-size: 16px;
   cursor: pointer;
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .reservedTag {
