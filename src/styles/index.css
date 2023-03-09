@@ -80,6 +80,12 @@ tr:nth-child(odd) {
 
 .profile-section {
   padding: 2rem;
+  display: flex;
+}
+
+.profile-missions {
+  width: 50%;
+  margin: 2em;
 }
 
 .profile-missions h1 {

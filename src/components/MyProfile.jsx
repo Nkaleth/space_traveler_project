@@ -23,13 +23,19 @@ const MyProfilePage = () => {
           )}
         </ul>
       </section>
-      <section className="myRockets">
-        <h2>My Rockets</h2>
-        {reserveRockets.map((rockets) => (
-          <li key={rockets.id}>
-            {rockets.name}
-          </li>
-        ))}
+      <section className="profile-missions">
+        <h1>My Rockets</h1>
+        <ul>
+          {reserveRockets.length > 0 ? (
+            reserveRockets.map((rocket) => (
+              <li key={rocket.id} className="profile-missions-item">
+                {rocket.name}
+              </li>
+            ))
+          ) : (
+            <li>No rockets reserved.</li>
+          )}
+        </ul>
       </section>
     </div>
   );
