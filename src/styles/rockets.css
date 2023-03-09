@@ -1,3 +1,65 @@
+.rocketsAllItems {
+  margin: 2em;
+}
+
 .rocketItemCont {
   display: flex;
+  width: 100%;
+  height: auto;
+  margin: 1em;
+}
+
+.rocketImgCont {
+  width: 30%;
+}
+
+.rocketImgCont img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rocket_details {
+  width: 75%;
+  margin: 1em;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserveButton {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.cancelButton {
+  background-color: white;
+  color: grey;
+  padding: 10px 20px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.reservedTag {
+  position: relative;
+  width: 60px;
+  height: 18px;
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
 }
