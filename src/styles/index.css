@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Missions section */
+
+.missions-section {
+  padding: 2rem;
+}
+
+.missions-divider {
+  margin-bottom: 1.2rem;
+  height: 1px;
+  background-color: #cfcfcf;
+  border: none;
+}
+
+/* Missions table */
+
+.missions-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-head {
+  background-color: white;
+}
+
+.missions-section th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #e5e8eb;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.mission-name {
+  font-weight: 700;
+}
+
+.mission-description {
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+}
+
+.status-badge {
+  border-radius: 0.4rem;
+  color: white;
+  font-weight: 400;
+  font-size: 0.8rem;
+  min-width: 105px;
+  text-align: center;
+}
+
+.status-badge-inactive {
+  background-color: #6d757d;
+}
+
+.status-badge-active {
+  background-color: #18a2b8;
+}
+
+.missions-section button {
+  background-color: transparent;
+  white-space: nowrap;
+  border: solid 1px black;
+  border-radius: 0.2rem;
+  padding: 0.4rem 0.6rem;
+  margin: 0.8rem;
+}
+
+/* My Profile */
+
+.profile-section {
+  padding: 2rem;
+  display: flex;
+}
+
+.profile-missions {
+  width: 50%;
+  margin: 2em;
+}
+
+.profile-missions h1 {
+  margin-bottom: 1rem;
+}
+
+.profile-missions ul {
+  list-style: none;
+}
+
+.profile-missions ul li {
+  border: solid 1px #e5e8eb;
+  padding: 1rem 1rem 2rem 1rem;
+}

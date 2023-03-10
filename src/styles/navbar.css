@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+
+.title-container {
+  display: flex;
+}
+
+.navbar img {
+  width: 4rem;
+}
+
+.navbar h1 {
+  margin: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 0 0.5rem;
+}
