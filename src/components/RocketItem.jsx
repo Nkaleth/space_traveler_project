@@ -19,7 +19,7 @@ const RocketItem = ({
           <p>
             {description}
           </p>
-          <button className="reserveButton" type="button" value="Reserve Rocket" onClick={() => (dispatch(reserveRocket(id)))}>Reserve Rocket</button>
+          <button data-testid="reserveButton" className="reserveButton" type="button" onClick={() => (dispatch(reserveRocket(id)))}>Reserve Rocket</button>
         </section>
       </div>
     );
@@ -35,7 +35,7 @@ const RocketItem = ({
           <span className="reservedTag">Reserved</span>
           {description}
         </p>
-        <button className="cancelButton" type="button" value="Reserve Rocket" onClick={() => (dispatch(reserveRocket(id)))}>Cancel Reservation</button>
+        <button data-testid="cancelButton" className="cancelButton" type="button" onClick={() => (dispatch(reserveRocket(id)))}>Cancel Reservation</button>
       </section>
     </div>
   );

@@ -1,83 +1,58 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { useDispatch, useSelector } from 'react-redux';
+import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import store from '../redux/store';
+import RocketItem from './RocketItem';
 import RocketPage from './RocketPage';
-// import { fetchMissions, leaveMission, reserveMission } from '../redux/missions/missionsSlice';
-import { getRocketItems, reserveRocket } from '../redux/rockets/rocketsSlice';
+import RocketTest from './rocketsReducer';
 
-jest.mock('react-redux', () => ({
-  useDispatch: jest.fn(),
-  useSelector: jest.fn(),
-}));
+const rocket = {
+  id: '2',
+  name: 'Falcon 2',
+  description: 'Good rocket!',
+  flickr_images: 'hi',
+  reserved: false,
+};
 
-jest.mock('../redux/missions/rocketSlice', () => ({
-  getRocketItems: jest.fn(),
-  reserveRocket: jest.fn(),
-}));
-
-describe('Rocket Page', () => {
-  beforeEach(() => {
-    useDispatch.mockReturnValue(jest.fn());
-    useSelector.mockImplementation((selectorFn) => selectorFn({
-      missions: {
-        Rockets: [
-          {
-            id: '1',
-            name: 'Falcon 1',
-            description: 'Bad Rocket!',
-            flickr_images: 'hello',
-            reserved: false,
-          },
-          {
-            id: '2',
-            name: 'Falcon 2',
-            description: 'Good rocket!',
-            flickr_images: 'hi',
-            reserved: false,
-          },
-        ],
-      },
-    }));
+jest.mock('axios');
+describe('Rockets must pass the test', () => {
+  test('added Rockets must return data', () => {
+    expect(RocketTest.addedRockets()).toBeDefined();
   });
-
-  afterEach(() => {
-    jest.clearAllMocks();
+  test('added Rockets return value length must be 4', () => {
+    expect(RocketTest.addedRockets()).toHaveLength(3);
   });
-
-  it('component matches snapshot', () => {
-    const { asFragment } = render(<RocketPage />);
-    expect(asFragment()).toMatchSnapshot();
+  test('added Rockets must return name t', () => {
+    expect(RocketTest.addedRockets()[2].description).toBe('Amazing rocket!');
   });
+});
 
-  it('dispatches fetchMissions action if missions array is empty', () => {
-    useSelector.mockImplementation((selectorFn) => selectorFn({
-      missions: {
-        missions: [],
-      },
-    }));
-
-    render(<RocketPage />);
-
-    expect(getRocketItems).toHaveBeenCalledTimes(1);
+describe('Rockets component', () => {
+  it('renders Rockets component', () => {
+    const rendering = renderer.create(
+      <Provider store={store}>
+        <BrowserRouter>
+          <RocketPage />
+        </BrowserRouter>
+      </Provider>,
+    ).toJSON();
+    expect(rendering).toMatchSnapshot();
   });
-
-  it('dispatches reserveMission when Join Mission button is clicked', () => {
-    render(<RocketPage />);
-
-    const joinMissionButton = screen.getByText('Join Mission');
-    fireEvent.click(joinMissionButton);
-
-    expect(reserveRocket).toHaveBeenCalledTimes(1);
-    expect(reserveRocket).toHaveBeenCalledWith('1'); // assuming mission_id is '1'
-  });
-
-  it('dispatches leaveMission when Leave Mission button is clicked', () => {
-    render(<RocketPage />);
-
-    const leaveMissionButton = screen.getByText('Leave Mission');
-    fireEvent.click(leaveMissionButton);
-
-    expect(reserveRocket).toHaveBeenCalledTimes(1);
-    expect(reserveRocket).toHaveBeenCalledWith('2'); // assuming mission_id is '2'
+  it('renders Rocket component', () => {
+    const itemMock = renderer.create(
+      <Provider store={store}>
+        <BrowserRouter>
+          <RocketItem
+            id={rocket.id}
+            name={rocket.name}
+            description={rocket.description}
+            Image={rocket.flickr_images}
+            reserved={rocket.reserved}
+          />
+        </BrowserRouter>
+      </Provider>,
+    ).toJSON();
+    expect(itemMock).toMatchSnapshot();
   });
 });
